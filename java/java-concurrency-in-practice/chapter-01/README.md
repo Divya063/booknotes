@@ -45,6 +45,10 @@ Even in single-processor systems, multithreaded programs can be useful when e.g.
 
 A useful metaphor is reading the newspaper, while waiting for the water to boil, rather than waiting for the water to boil & then reading the newspaper.  
 
+Multithreading concepts - https://docs.oracle.com/cd/E19253-01/816-5137/mtintro-25092/index.html#:~:text=In%20a%20multithreaded%20process%20on,are%20not%20actually%20running%20simultaneously.
+
+Event threads should not be used for long running tasks.
+
 ## Risks of threads
 Since multithreaded programs are so mainstream now, concurrency is not an advanced programming topic, but a required one, nowadays.
 
