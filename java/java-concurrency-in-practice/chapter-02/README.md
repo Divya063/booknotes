@@ -25,8 +25,13 @@ How to fix synchronization:
  
 Good object-oriented practices (encapsulation) can help you achieve thread-safety more easily.
 
+It is always a good practice first to make your code right, and then make it fast. Pursue optimization only if your performance measurements and requirements tell
+you that you must, and if those same measurements and requirements tell you that your optimizations actually made a difference under realistic conditions. 
+
 # What is thread-safety?
 > A class is thread-safe when it continues to behave correctly when accessed from multiple threads.
+
+Before you go off thinking about multithreaded correctness, make sure you at least have single-threaded correctness.
 
 Thread-safe classes encapsulate synchronization so that clients don't have to.
 
@@ -41,6 +46,8 @@ public class StatelessFactorizer implements Servlet {
   }
 }
 ```
+
+The transient state (variables have been changed and the system has not yet reached a steady state) for a particular computation exists solely in local variables that are stored in thread's stack and are accessible only to the executing thread. 
 
 This file doesn't have any synchronization but it is thread-safe as it's a stateless class. All stateless classes are thread-safe.
 
